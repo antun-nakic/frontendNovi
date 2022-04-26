@@ -7,27 +7,12 @@
     <title>Document</title>
   </head>
   <body>
+    <script type="text/javascript" src="index.js"></script>
     <h1 style="color: blue">DObar dan svijete</h1>
     <p>djkghjkds</p>
     <p>Laku noć</p>
     <button onclick="novaLista('batman')">Ucitaj filmove</button>
     <p id="podaci"></p>
-    <script>
-      function novaLista(upit) {
-        var ubaciOde = document.getElementById("podaci");
-        fetch(`https://api.tvmaze.com/search/shows?q=${upit}`)
-          .then(function (response) {
-            return response.json();
-          })
-          .then(function (data) {
-            console.log(data);
-            var html = "";
-            data.forEach(function (movie) {
-              html += "<p>" + movie.show.name + "</p>";
-            });
-            ubaciOde.innerHTML = html;
-          });
-      }
-    </script>
+
   </body>
 </html>

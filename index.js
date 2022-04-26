@@ -22,11 +22,11 @@ function novaLista(upit) {
 }
 
 function changeColor(){
-//Rainbow effekt na naslovu stranice
-var title = document.getElementById("title");
-var color = "rgb(0,0,0)";
-var interval = setInterval(function () {
-  color = "rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")";
-  title.style.color = color;
-}, 1000);
+    //Rainbow effekt na naslovu stranice
+    var title = document.getElementById("title");
+    var color = "rgb(0,0,0)";
+    var interval = setInterval(function () {
+        color = "rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")";
+        title.style.color = color;
+    }, 1000);
 }

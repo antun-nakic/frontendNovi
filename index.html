@@ -5,29 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script type="text/javascript" src="index.js"></script>
   </head>
-  <body>
+
+  <body onload="init()">
     <h1 style="color: red">Dobar dan svijete</h1>
+
     <p>djkghjkds</p>
     <p>Dobro jutro</p>
     <button onclick="novaLista('batman')">Ucitaj filmove</button>
     <p id="podaci"></p>
-    <script>
-      function novaLista(upit) {
-        var ubaciOde = document.getElementById("podaci");
-        fetch(`https://api.tvmaze.com/search/shows?q=${upit}`)
-          .then(function (response) {
-            return response.json();
-          })
-          .then(function (data) {
-            console.log(data);
-            var html = "";
-            data.forEach(function (movie) {
-              html += "<p>" + movie.show.name + "</p>";
-            });
-            ubaciOde.innerHTML = html;
-          });
-      }
-    </script>
   </body>
 </html>

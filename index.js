@@ -21,7 +21,7 @@ function novaLista(upit) {
     });
 }
 
-function chageColor(){
+function changeColor(){
 //Rainbow effekt na naslovu stranice
 var title = document.getElementById("title");
 var color = "rgb(0,0,0)";

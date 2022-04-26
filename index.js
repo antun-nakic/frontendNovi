@@ -1,6 +1,6 @@
 console.log("bok");
 
-// function which updates the movie list; takes 1 query param for movie name
+// Daniel: function which updates the movie list; takes 1 query param for movie name
 function novaLista(upit) {
   var ubaciOde = document.getElementById("podaci");
   fetch(`https://api.tvmaze.com/search/shows?q=${upit}`)

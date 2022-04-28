@@ -1,10 +1,16 @@
 console.log("bok")
 
-function init() {
-  changeColor()
+
+//Funkcija koja se poziva kada se inicializira stranica
+function init(){
+  changeColor();
 }
 
-// Daniel: function which updates the movie list; takes 1 query param for movie name
+//Funkcija dohvaća variablu upit te ga koristi u pozivu na TVMaze API da dohvati
+//  filmove koji imaju isti upit kao i upit
+//Zatim odgovore od API-a prvo ispisuje u konzolu, pa onda u HTML
+//  na nacin da sa forEach petljom dohvaca svaki rezultat i ispisuje u HTML sa
+//  p tagom
 function novaLista(upit) {
   let ubaciOde = document.getElementById("podaci")
   fetch(`https://api.tvmaze.com/search/shows?q=${upit}`)
@@ -36,4 +42,5 @@ function changeColor() {
       ")"
     title.style.color = color
   }, 1000)
+
 }

@@ -12,7 +12,8 @@ function init(){
 //  na nacin da sa forEach petljom dohvaca svaki rezultat i ispisuje u HTML sa
 //  p tagom
 function novaLista(upit) {
-  let ubaciOde = document.getElementById("podaci")
+  let ubaciOde = document.getElementById("popis-filmovaserija")
+  ubaciOde.innerHTML = ""
   fetch(`https://api.tvmaze.com/search/shows?q=${upit}`)
     .then(function (response) {
       return response.json()
@@ -21,7 +22,7 @@ function novaLista(upit) {
       console.log(data)
       let html = ""
       data.forEach(function (movie) {
-        html += "<p>" + movie.show.name + "</p>"
+        html += `<li><a href="${movie.show.url}">${movie.show.name}</a></li>`
       })
       ubaciOde.innerHTML = html
     })

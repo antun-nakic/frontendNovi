@@ -1,4 +1,5 @@
-console.log("bok");
+console.log("bok")
+
 
 //Funkcija koja se poziva kada se inicializira stranica
 function init(){
@@ -11,31 +12,35 @@ function init(){
 //  na nacin da sa forEach petljom dohvaca svaki rezultat i ispisuje u HTML sa
 //  p tagom
 function novaLista(upit) {
-  var ubaciOde = document.getElementById("podaci");
+  let ubaciOde = document.getElementById("podaci")
   fetch(`https://api.tvmaze.com/search/shows?q=${upit}`)
     .then(function (response) {
-      return response.json();
+      return response.json()
     })
     .then(function (data) {
-      console.log(data);
-      var html = "";
+      console.log(data)
+      let html = ""
       data.forEach(function (movie) {
-        html += "<p>" + movie.show.name + "</p>";
-      });
-      ubaciOde.innerHTML = html;
-    });
+        html += "<p>" + movie.show.name + "</p>"
+      })
+      ubaciOde.innerHTML = html
+    })
 }
 
-function changeColor(){
-    //Rainbow effekt na naslovu stranice
-    var title = document.getElementById("title");
-    //varijabla boju u rgb formatu (red, green, blue) koju ćemo mijenjati i primjenjivati na naslov
-    var color = "rgb(0,0,0)";
-    //varijabla koja svaki interval od 1s ili 1000ms mijenja boju
-    //sa Math.random() funkcijom dobijamo slučajan broj između 0 i 255 i stime dobivamo vrijednost boje
-    //zatim spremimo tu boju novu i primjenimo ju na naslov
-    var interval = setInterval(function () {
-        color = "rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")";
-        title.style.color = color;
-    }, 1000);
+function changeColor() {
+  //Rainbow effekt na naslovu stranice
+  let title = document.getElementById("title")
+  let color = "rgb(0,0,0)"
+  let interval = setInterval(function () {
+    color =
+      "rgb(" +
+      Math.floor(Math.random() * 255) +
+      "," +
+      Math.floor(Math.random() * 255) +
+      "," +
+      Math.floor(Math.random() * 255) +
+      ")"
+    title.style.color = color
+  }, 1000)
+
 }
